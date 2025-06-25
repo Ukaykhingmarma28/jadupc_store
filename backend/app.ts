@@ -7,6 +7,7 @@ import { AppDataSource } from './configs/ormconfig';
 import userRouter from './services/users/userRoute';
 import globalErrorHandler from './middleware/globalErrorHandler';
 import { config } from './configs/config';
+import productRouter from './services/products/productRoute';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(morgan('dev'));
 
 // Routes
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/products', productRouter);
 
 // Global error handler
 app.use(globalErrorHandler);
